@@ -43,5 +43,14 @@ reg COPI_PCA_01 q1 q2 ed i.etid
 
 factor jc10 jc13 jc15a b1 b2 b3 b12 b13 b21 b21a b32 b47a m2 media3 ing4 pn4
 
-*trust in institutions factor? 
-factor b1 b2 b3 b12 b13 b21 b21a b32 b47a m2
+*trust in institutions factor?
+factor b1 b2 b3 b12 b13 b21 b21a b32 b47a
+predict TrustInstitutions_Factor
+
+gen TrustInstitutions_Factor_01 =(TrustInstitutions_Factor+1.598516)/(2.716917+1.598516)
+
+*trust in institutions PCA
+pca b1 b2 b3 b12 b13 b21 b21a b32 b47a
+predict TrustInstitutions_PCA
+
+gen TrustInstitutions_PCA_01 = (TrustInstitutions_PCA+3.62393)/(5.812778+3.62393)
