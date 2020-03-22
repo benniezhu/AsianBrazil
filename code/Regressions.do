@@ -14,6 +14,11 @@ eststo COPI_PCA: reg COPI_PCA_01 i.EduCat##i.etid FemaleD q2 i.IncomeCat i.etid 
 eststo COPI_Factor: reg COPI_Factor_01 i.EduCat##i.etid FemaleD q2 i.IncomeCat i.year [pw=wt]
 esttab using "C:\Users\Ben\Google Drive\AsianBrazil\output\COPI_EduInteraction.rtf", replace label
 
+*race and income interaction
+eststo COPI_PCA: reg COPI_PCA_01 i.EduCat FemaleD q2 i.IncomeCat##i.etid i.year [pw=wt]
+eststo COPI_Factor: reg COPI_Factor_01 i.EduCat FemaleD q2 i.IncomeCat##i.etid i.year [pw=wt]
+esttab using "C:\Users\Ben\Google Drive\AsianBrazil\output\COPI_RaceIncome.rtf", replace label
+
 
 *No interactions
 eststo TrustInstitutions_PCA: reg TrustInstitutions_PCA_01 i.EduCat FemaleD q2 i.IncomeCat i.etid i.year [pw=wt]
@@ -24,6 +29,11 @@ esttab using "C:\Users\Ben\Google Drive\AsianBrazil\output\TrustInstitutions.rtf
 eststo TrustInstitutions_PCA: reg TrustInstitutions_PCA_01 i.EduCat##i.etid FemaleD q2 i.IncomeCat i.year [pw=wt]
 eststo TrustInstitutions_Factor: reg TrustInstitutions_Factor_01 i.EduCat##i.etid FemaleD q2 i.IncomeCat i.year [pw=wt]
 esttab using "C:\Users\Ben\Google Drive\AsianBrazil\output\TrustInstitutions_EduInteraction.rtf", replace label
+
+*race and income interaction
+eststo TrustInstitutions_PCA: reg TrustInstitutions_PCA_01 i.EduCat FemaleD q2 i.IncomeCat##i.etid i.year [pw=wt]
+eststo TrustInstitutions_Factor: reg TrustInstitutions_Factor_01 i.EduCat FemaleD q2 i.IncomeCat##i.etid i.year [pw=wt]
+esttab using "C:\Users\Ben\Google Drive\AsianBrazil\output\TrustInstitutions_RaceIncome.rtf", replace label
 
 
 foreach y in $ylist{
