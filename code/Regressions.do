@@ -35,6 +35,10 @@ eststo TrustInstitutions_PCA: reg TrustInstitutions_PCA_01 i.EduCat FemaleD q2 i
 eststo TrustInstitutions_Factor: reg TrustInstitutions_Factor_01 i.EduCat FemaleD q2 i.IncomeCat##i.etid i.year [pw=wt]
 esttab using "C:\Users\Ben\Google Drive\AsianBrazil\output\TrustInstitutions_RaceIncome.rtf", star(+ 0.1 * 0.05 ** 0.01 ) replace label
 
+eststo COPI_Factor: reg COPI_Factor_01 i.EduCat##i.etid FemaleD q2 i.IncomeCat i.year [pw=wt]
+eststo TrustInstitutions_Factor: reg TrustInstitutions_Factor_01 i.EduCat##i.etid FemaleD q2 i.IncomeCat i.year [pw=wt]
+esttab using "C:\Users\Ben\Google Drive\AsianBrazil\output\FactorRegs.rtf", star(+ 0.1 * 0.05 ** 0.01 ) replace label
+
 
 foreach y in $ylist{
   reg `y' i.EduCat FemaleD q2 i.IncomeCat i.etid i.year [pw=wt]
