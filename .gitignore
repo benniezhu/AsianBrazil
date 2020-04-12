@@ -16,3 +16,4 @@ data/*.dta
 *.out
 *.svn
 *~ 
+.Rproj.user
