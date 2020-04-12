@@ -33,5 +33,16 @@ rename year1 year_2017
 rename year2 year_2019
 
 
+
 estpost sum FemaleD q2 EduCat_0_9 EduCat_10_13 EduCat_14P IncomeCat_0_1050 IncomeCat_1051_1950 IncomeCat_1951_2550 IncomeCat_4951p etid_branco etid_indi etid_neg etid_mul etid_outro etid_amarel year_2017 year_2019 [aw = wt]
 esttab using "C:\Users\Ben\Google Drive\AsianBrazil\output\IndependentVariables.rtf", cell((mean sd)) replace
+
+
+tab Etid2, generate(Etid2)
+rename Etid21 etid2_branco
+rename Etid22 etid2_negromullato
+rename Etid23 etid2_outro
+rename Etid24 etid2_amarelo
+
+estpost sum FemaleD q2 UniversityD IncomeCat_0_1050 IncomeCat_1051_1950 IncomeCat_1951_2550 IncomeCat_4951p etid2_branco etid2_negromullato etid2_outro etid2_amarelo year_2017 year_2019 [aw = wt]
+esttab using "C:\Users\Ben\Google Drive\AsianBrazil\output\IndependentVariablesSecondSet.rtf", cell((mean sd)) replace
