@@ -1,5 +1,5 @@
 use "C:\Users\Ben\Google Drive\AsianBrazil\data\Brazil2017-2019WorkingCopy.dta"
-estpost sum  b1 b2 b3 b12 b13 b21 b21a b32 b47a [aw=wt]
+estpost sum  b1 b2 b3 b4 b6 b12 b13 b21 b21a b32 b47a [aw=wt]
 esttab using "C:\Users\Ben\Google Drive\AsianBrazil\output\ConfInstFactorVarsUsed.rtf", cell((mean sd))
 
 estpost sum pol1 eff2_reordered conocim [aw=wt]
