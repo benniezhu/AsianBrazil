@@ -1,5 +1,8 @@
 use "D:\Data\AsianBrazilData\data\Brazil2017_2019RIndexPolyT2.dta"
 
+*invert COPI MR
+replace COPI_MR1 = COPI_MR1 * -1
+
 *standardize 0-1
 
 egen COPI_MR1_Max = max(COPI_MR1)
@@ -15,7 +18,9 @@ eststo COPI_SemInt : reg COPI_MR1_01 i.Etid2 UniversityD FemaleD q2 i.IncomeCat 
 eststo CI_SemInt : reg CI_MR1_01 i.Etid2 UniversityD FemaleD q2 i.IncomeCat i.year
 
 
-eststo COPI : reg COPI_MR1_01 i.Etid2##UniversityD FemaleD q2 i.IncomeCat i.year
-eststo CI : reg CI_MR1_01 i.Etid2##UniversityD FemaleD q2 i.IncomeCat i.year
+eststo COPI : reg COPI_MR1_01 i.Etid2##c.UniversityD FemaleD q2 i.IncomeCat i.year
+eststo CI : reg CI_MR1_01 i.Etid2##c.UniversityD FemaleD q2 i.IncomeCat i.year
 
 esttab using "C:\Users\Ben\Google Drive\AsianBrazil\output\FactorRegs_RFactorsPolyChoric.rtf", star(+ 0.1 * 0.05 ** 0.01 ) replace label
+
+esttab using "C:\Users\Ben\Google Drive\AsianBrazil\output\FactorRegs_RFactorsPolyChoric_English.rtf", star(+ 0.1 * 0.05 ** 0.01 ) replace label
