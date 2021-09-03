@@ -21,3 +21,9 @@ esttab using "C:\Users\Ben\Google Drive\AsianBrazil\output\FactorRegs_RFactors.r
 eststo COPI_AsianD: reg COPI_R_01 AsianD##UniversityD FemaleD q2 i.IncomeCat i.year
 eststo CI_AsianD:reg CI_R_01 AsianD##UniversityD FemaleD q2 i.IncomeCat i.year
 esttab using "C:\Users\Ben\Google Drive\AsianBrazil\output\FactorRegs_RFactors_AsianD.rtf", star(+ 0.1 * 0.05 ** 0.01 ) replace label
+
+
+
+eststo COPI_AsianD: reg COPI_R_01 i.Etid2 UniversityD FemaleD q2 i.IncomeCat i.year
+eststo CI_AsianD:reg CI_R_01 i.Etid2 UniversityD FemaleD q2 i.IncomeCat i.year
+esttab using "C:\Users\Ben\Google Drive\AsianBrazil\output\FactorRegs_RFactors_NoInter.rtf", star(+ 0.1 * 0.05 ** 0.01 ) replace label

@@ -6,7 +6,7 @@ Brazil2017_2019WorkingCopy <- read_dta("D:/Data/AsianBrazilData/data/Brazil2017-
 View(Brazil2017_2019WorkingCopy)
 
 attach(Brazil2017_2019WorkingCopy)
-COPI_Vars = cbind(pol1_1_7, eff2_reordered, conocim_1_7)
+COPI_Vars = cbind(pol1_1_7_reordered, eff2, conocim_1_7_reordered)
 CI_Vars = cbind(b1, b2, b3,b4, b6, b12, b13, b21, b21a, b32, b47a)
 
 ## COPI Factor
